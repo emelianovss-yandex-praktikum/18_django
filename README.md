@@ -2,13 +2,36 @@
 
 - [ ] Что такое докер - namespaces, пример с proc/{pid}/stats
 - [ ] Сборка образа и кэширование слоев
+   - контекст и dockerignore
+   - Какие слои должны быть первыми
+   - FROM
+   - RUN
+   - ADD, COPY
+   - Копирование директорий
 - [ ] Контейнер: запуск, поговорим про CMD и ENTRYPOINT
+   - --rm, -it,
+   - link
+   - shell, exec mode
 - [ ] Главное при отладке: inspect, exec, bash
 - [ ] Network: publish, host
+   - publish
+   - 127.0.0.1
 - [ ] Volumes
+   - именованные
+   - не именованные
 - [ ] Env
-- [ ] Полезности: stats, cp, history, ps, ps -a, --format
+   - cli
+   - env file
+- [ ] Полезности
+   - stats
+   - cp
+   - history
+   - ps, ps -a
+   - --format
 - [ ] docker-compose
+   - .env и название проекта 
+   - volumes 
+   - вам не нужен depends_on и link
 
 ## Docker tips & tricks
 ### Context
@@ -32,29 +55,6 @@ services:
 
 * Сборка образа происходит быстрее
 * В образ не попадает всякий хлам
-
-### Volume
-```yaml
-version: "3.5"
-
-services:
-  vol_no_name:
-    build:
-      context: .
-      dockerfile: context.Dockerfile
-
-  vol_with_name:
-    build:
-      context: .
-      dockerfile: context.Dockerfile
-
-  vol_file:
-    build:
-      context: .
-      dockerfile: context.Dockerfile
-
-```
-
 
 ### Networks
 
