@@ -28,6 +28,7 @@
    - history
    - ps, ps -a
    - --format
+   - --filter
 - [ ] docker-compose
    - .env и название проекта 
    - volumes 
